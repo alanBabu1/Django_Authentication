@@ -1,0 +1,35 @@
+
+ <!doctype html>
+ <html lang="en">
+ <head>
+	 <meta charset="UTF-8">
+	 <meta name="viewport"
+		   content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	 <title>Register</title>
+ </head>
+ <style>
+/* .a1{
+	text-align: center;
+} */
+ </style>
+ <body style="background-color:rgb(190, 233, 217);">
+<div class="container" style="background-color:rgb(102, 231, 184);">
+	<div class="row">
+		<div class="col-5 a1">
+			<h2>Homepage</h2>
+			<p>Welcome, {% if user.is_authenticated %}{{ user.username }}{% else %}visitor{% endif %}!</p>
+			
+			<form method="post" enctype="multipart/form-data" style="font-size: 30px;">
+				{% csrf_token %}
+				 {{ form.as_p }}
+				<button type="submit">SUBMIT</button>
+		   </form>
+		   <a href="{% url 'logout' %}">Logout</a>
+		</div>
+	</div>
+</div> 
+
+ 
+
+ 
